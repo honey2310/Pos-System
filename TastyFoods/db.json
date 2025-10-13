@@ -1,0 +1,469 @@
+{
+    "manager": [
+      {
+        "id": 1,
+        "name": "Rahul Mehta",
+        "email": "rahul@burgerboss.com",
+        "password": "admin123",
+        "role": "Manager",
+        "img": "https://randomuser.me/api/portraits/men/45.jpg"
+      }
+    ],
+    "employees": [
+      {
+        "id": 1,
+        "name": "Aman Patel",
+        "role": "Waiter",
+        "contact": "9876543210",
+        "salary": 15000,
+        "email": "aman@tastyfoods.com",
+        "password": "1234",
+        "totalSales": 4800,
+        "totalOrders": 12,
+        "img": "https://randomuser.me/api/portraits/men/36.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Priya Sharma",
+        "role": "Waiter",
+        "contact": "9988776655",
+        "salary": 15500,
+        "email": "priya@tastyfoods.com",
+        "password": "1234",
+        "totalSales": 6250,
+        "totalOrders": 15,
+        "img": "https://randomuser.me/api/portraits/women/44.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Vikram Desai",
+        "role": "Waiter",
+        "contact": "9090909090",
+        "salary": 16000,
+        "email": "vikram@tastyfoods.com",
+        "password": "1234",
+        "totalSales": 7120,
+        "totalOrders": 18,
+        "img": "https://randomuser.me/api/portraits/men/55.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Sneha Nair",
+        "role": "Cashier",
+        "contact": "9700112233",
+        "salary": 18000,
+        "email": "sneha@tastyfoods.com",
+        "password": "1234",
+        "totalSales": 8300,
+        "totalOrders": 19,
+        "img": "https://randomuser.me/api/portraits/women/65.jpg"
+      }
+    ],
+    "menu": [
+      {
+        "id": 1,
+        "name": "Classic Veg Burger",
+        "category": "Burger",
+        "price": 1.44,
+        "available": true,
+        "taxRate": 5,
+        "description": "Crispy veg patty, lettuce & mayo.",
+        "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 2,
+        "name": "Cheese Burst Burger",
+        "category": "Burger",
+        "price": 1.92,
+        "available": true,
+        "taxRate": 5,
+        "description": "Extra cheese & double patty delight.",
+        "img": "https://images.unsplash.com/photo-1606755962773-0e9b48e6105d",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 3,
+        "name": "Chicken Crunch Burger",
+        "category": "Chicken",
+        "price": 2.28,
+        "available": true,
+        "taxRate": 5,
+        "description": "Juicy chicken patty with spicy sauce.",
+        "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 4,
+        "name": "Paneer Tikka Burger",
+        "category": "Burger",
+        "price": 1.80,
+        "available": true,
+        "taxRate": 5,
+        "description": "Soft paneer grilled with spicy tikka flavor.",
+        "img": "https://images.unsplash.com/photo-1627308595121-2e1e4eab444d",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 5,
+        "name": "Double Cheese Burger",
+        "category": "Burger",
+        "price": 2.40,
+        "available": true,
+        "taxRate": 5,
+        "description": "Two juicy patties with double cheese.",
+        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 6,
+        "name": "Tandoori Chicken Burger",
+        "category": "Chicken",
+        "price": 2.52,
+        "available": true,
+        "taxRate": 5,
+        "description": "Tandoori spiced grilled chicken burger.",
+        "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 7,
+        "name": "Grilled Chicken Sandwich",
+        "category": "Sandwich",
+        "price": 2.16,
+        "available": true,
+        "taxRate": 5,
+        "description": "Grilled sandwich with spicy chicken filling.",
+        "img": "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 8,
+        "name": "Club Sandwich",
+        "category": "Sandwich",
+        "price": 1.92,
+        "available": true,
+        "taxRate": 5,
+        "description": "Triple-layered veg sandwich with mayo.",
+        "img": "https://images.unsplash.com/photo-1627308595049-3269c7b77c3b",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 9,
+        "name": "Veggie Pizza Slice",
+        "category": "Pizza",
+        "price": 1.44,
+        "available": true,
+        "taxRate": 5,
+        "description": "Cheesy veggie-loaded pizza slice.",
+        "img": "https://images.unsplash.com/photo-1601924582971-c7512fa3a369",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 10,
+        "name": "Pepperoni Pizza Slice",
+        "category": "Pizza",
+        "price": 1.92,
+        "available": true,
+        "taxRate": 5,
+        "description": "Pepperoni slice with extra cheese.",
+        "img": "https://images.unsplash.com/photo-1601924582971-3d9fbd6e23cf",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 11,
+        "name": "Coke 500ml",
+        "category": "Drinks",
+        "price": 0.72,
+        "available": true,
+        "taxRate": 12,
+        "description": "Chilled soft drink.",
+        "img": "https://images.unsplash.com/photo-1613470209377-6ab6d9d984a4",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 12,
+        "name": "Cold Coffee",
+        "category": "Drinks",
+        "price": 1.08,
+        "available": true,
+        "taxRate": 12,
+        "description": "Blended coffee with ice & milk.",
+        "img": "https://images.unsplash.com/photo-1601315576607-6bffb3cdd3b3",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 13,
+        "name": "Oreo Shake",
+        "category": "Drinks",
+        "price": 1.56,
+        "available": true,
+        "taxRate": 12,
+        "description": "Thick shake with Oreo biscuits.",
+        "img": "https://images.unsplash.com/photo-1606813902913-ef5d8d0d6bdf",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 14,
+        "name": "Mojito",
+        "category": "Drinks",
+        "price": 1.20,
+        "available": true,
+        "taxRate": 12,
+        "description": "Refreshing mint & lemon mocktail.",
+        "img": "https://images.unsplash.com/photo-1621592167506-3e1b7d1f4ff3",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 15,
+        "name": "Strawberry Shake",
+        "category": "Drinks",
+        "price": 1.44,
+        "available": true,
+        "taxRate": 12,
+        "description": "Fresh strawberry milkshake.",
+        "img": "https://images.unsplash.com/photo-1565958011705-44e2118b6a4c",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 16,
+        "name": "Chicken Wings",
+        "category": "Chicken",
+        "price": 2.16,
+        "available": true,
+        "taxRate": 5,
+        "description": "Spicy grilled chicken wings with sauce.",
+        "img": "https://images.unsplash.com/photo-1604908177443-0070b9f29f12",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 17,
+        "name": "Butter Chicken Pasta",
+        "category": "Pasta",
+        "price": 2.28,
+        "available": true,
+        "taxRate": 5,
+        "description": "Creamy pasta tossed in butter chicken sauce.",
+        "img": "https://images.unsplash.com/photo-1617196034913-1d4e9a8f4a06",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 18,
+        "name": "White Sauce Pasta",
+        "category": "Pasta",
+        "price": 1.80,
+        "available": true,
+        "taxRate": 5,
+        "description": "Cheesy white sauce pasta with herbs.",
+        "img": "https://images.unsplash.com/photo-1589307004173-3c9520c6b58b",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 19,
+        "name": "Arrabbiata Pasta",
+        "category": "Pasta",
+        "price": 1.92,
+        "available": false,
+        "taxRate": 5,
+        "description": "Spicy red sauce pasta with Italian herbs.",
+        "img": "https://images.unsplash.com/photo-1599785209707-28f4f943fd0b",
+        "tag": "OUT OF STOCK"
+      },
+      {
+        "id": 20,
+        "name": "Grilled Chicken Pizza",
+        "category": "Pizza",
+        "price": 2.28,
+        "available": true,
+        "taxRate": 5,
+        "description": "Pizza topped with grilled chicken and cheese.",
+        "img": "https://images.unsplash.com/photo-1601924582971-c7512fa3a369",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 21,
+        "name": "BBQ Chicken Pizza",
+        "category": "Pizza",
+        "price": 2.64,
+        "available": true,
+        "taxRate": 5,
+        "description": "Loaded with smoky BBQ chicken, cheese & onion.",
+        "img": "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 22,
+        "name": "Veg Supreme Pizza",
+        "category": "Pizza",
+        "price": 2.16,
+        "available": true,
+        "taxRate": 5,
+        "description": "Topped with corn, peppers, and extra cheese.",
+        "img": "https://images.unsplash.com/photo-1601924582971-3d9fbd6e23cf",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 23,
+        "name": "Chocolate Shake",
+        "category": "Drinks",
+        "price": 1.32,
+        "available": true,
+        "taxRate": 12,
+        "description": "Creamy chocolate milkshake with cocoa drizzle.",
+        "img": "https://images.unsplash.com/photo-1613470209377-6ab6d9d984a4",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 24,
+        "name": "Garlic Bread",
+        "category": "Pizza",
+        "price": 1.44,
+        "available": true,
+        "taxRate": 5,
+        "description": "Toasted bread with garlic butter & herbs.",
+        "img": "https://images.unsplash.com/photo-1606813902913-ef5d8d0d6bdf",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 25,
+        "name": "Spicy Chicken Sandwich",
+        "category": "Sandwich",
+        "price": 2.04,
+        "available": true,
+        "taxRate": 5,
+        "description": "Grilled sandwich with spicy chicken & cheese.",
+        "img": "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 26,
+        "name": "Chicken Alfredo Pasta",
+        "category": "Pasta",
+        "price": 2.40,
+        "available": true,
+        "taxRate": 5,
+        "description": "Creamy white sauce pasta with grilled chicken.",
+        "img": "https://images.unsplash.com/photo-1617196034913-1d4e9a8f4a06",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 27,
+        "name": "Crispy Chicken Strips",
+        "category": "Chicken",
+        "price": 2.28,
+        "available": true,
+        "taxRate": 5,
+        "description": "Crispy fried chicken strips served with dip.",
+        "img": "https://images.unsplash.com/photo-1604908177443-0070b9f29f12",
+        "tag": "10% OFF"
+      },
+      {
+        "id": 28,
+        "name": "Iced Lemon Tea",
+        "category": "Drinks",
+        "price": 1.08,
+        "available": true,
+        "taxRate": 12,
+        "description": "Refreshing iced tea with lemon twist.",
+        "img": "https://images.unsplash.com/photo-1621592167506-3e1b7d1f4ff3",
+        "tag": "15% OFF"
+      },
+      {
+        "id": 29,
+        "name": "Spaghetti Bolognese",
+        "category": "Pasta",
+        "price": 2.64,
+        "available": true,
+        "taxRate": 5,
+        "description": "Classic Italian spaghetti with meat sauce.",
+        "img": "https://images.unsplash.com/photo-1589307004173-3c9520c6b58b",
+        "tag": "20% OFF"
+      },
+      {
+        "id": 30,
+        "name": "Peri Peri Chicken Burger",
+        "category": "Chicken",
+        "price": 2.40,
+        "available": true,
+        "taxRate": 5,
+        "description": "Spicy peri peri chicken burger with lettuce & mayo.",
+        "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
+        "tag": "20% OFF"
+      }
+    ],
+    "orders": [
+      {
+        "id": 101,
+        "employeeId": 1,
+        "customerName": "Ravi Kumar",
+        "tableNumber": 3,
+        "status": "Completed",
+        "date": "2025-10-09",
+        "items": [
+          { "menuId": 2, "name": "Cheese Burst Burger", "quantity": 2, "price": 1.92 },
+          { "menuId": 11, "name": "Coke 500ml", "quantity": 2, "price": 0.72 }
+        ],
+        "subtotal": 6.24,
+        "tax": 0.31,
+        "discount": 0,
+        "total": 6.55,
+        "paymentMethod": "UPI"
+      },
+      {
+        "id": 102,
+        "employeeId": 2,
+        "customerName": "Anjali Gupta",
+        "tableNumber": 1,
+        "status": "Completed",
+        "date": "2025-10-09",
+        "items": [
+          { "menuId": 3, "name": "Chicken Crunch Burger", "quantity": 1, "price": 2.28 },
+          { "menuId": 13, "name": "Oreo Shake", "quantity": 1, "price": 1.56 }
+        ],
+        "subtotal": 3.84,
+        "tax": 0.19,
+        "discount": 0.20,
+        "total": 3.83,
+        "paymentMethod": "Cash"
+      },
+      {
+        "id": 103,
+        "employeeId": 3,
+        "customerName": "Snehal Deshmukh",
+        "tableNumber": 2,
+        "status": "Pending",
+        "date": "2025-10-10",
+        "items": [
+          { "menuId": 1, "name": "Classic Veg Burger", "quantity": 1, "price": 1.44 },
+          { "menuId": 14, "name": "Mojito", "quantity": 1, "price": 1.20 }
+        ],
+        "subtotal": 2.64,
+        "tax": 0.13,
+        "discount": 0,
+        "total": 2.77,
+        "paymentMethod": "Card"
+      }
+    ],
+    "reports": {
+    "totalEmployees": 4,
+    "totalOrders": 3,
+    "totalRevenue": 1072,
+    "topSellingDishes": [
+      { "name": "Cheese Burst Burger", "orders": 5 },
+      { "name": "French Fries", "orders": 4 },
+      { "name": "Oreo Shake", "orders": 3 }
+    ],
+    "salesTrends": [
+      { "date": "2025-10-07", "total": 380 },
+      { "date": "2025-10-08", "total": 450 },
+      { "date": "2025-10-09", "total": 546 }
+    ]
+  }
+
+  }
+  
+
+  
+
+
+
