@@ -1,29 +1,55 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-export default function OrderSuccessPopup({ show, onClose }) {
+export default function OrderSuccessPopup({ show, onClose, orderDetails }) {
   const [showReceipt, setShowReceipt] = useState(false);
   const receiptRef = useRef(null);
+  const [order, setOrder] = useState(orderDetails || null);
 
-  // ✅ Download as PDF
+  useEffect(() => {
+    if (!orderDetails) {
+      const savedOrder = JSON.parse(localStorage.getItem("lastConfirmedOrder"));
+      if (savedOrder) setOrder(savedOrder);
+    } else {
+      setOrder(orderDetails);
+    }
+  }, [show, orderDetails]);
+
+  if (!order) return null;
+
+  const subtotal = order.orders.reduce(
+    (sum, item) => sum + item.qty * parseFloat(item.price.replace("$", "")),
+    0
+  );
+  const serviceCharge = subtotal * 0.1;
+  const gst = subtotal * 0.05;
+  const grandTotal = subtotal + serviceCharge + gst;
+
   const handleDownloadPDF = async () => {
-    const element = receiptRef.current;
-    const canvas = await html2canvas(element);
+    if (!receiptRef.current) return;
+    const canvas = await html2canvas(receiptRef.current, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: "#ffffff",
+      logging: false,
+      windowWidth: document.documentElement.scrollWidth,
+      windowHeight: document.documentElement.scrollHeight,
+    });
     const imgData = canvas.toDataURL("image/png");
     const pdf = new jsPDF("p", "mm", "a4");
     const pdfWidth = pdf.internal.pageSize.getWidth();
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-    pdf.save("Order_Receipt.pdf");
+    pdf.save(`Order_${order.orderId}.pdf`);
   };
 
-  // ✅ Print the receipt
   const handlePrint = () => {
-    const printContents = receiptRef.current.innerHTML;
+    if (!receiptRef.current) return;
     const printWindow = window.open("", "_blank", "width=800,height=600");
+    if (!printWindow) return;
     printWindow.document.write(`
       <html>
         <head>
@@ -37,17 +63,18 @@ export default function OrderSuccessPopup({ show, onClose }) {
             .total { font-weight: bold; }
           </style>
         </head>
-        <body>${printContents}</body>
+        <body>${receiptRef.current.innerHTML}</body>
       </html>
     `);
     printWindow.document.close();
+    printWindow.focus();
     printWindow.print();
   };
 
   return (
     <AnimatePresence>
+      {/* Confirmation popup */}
       {show && !showReceipt && (
-        // ✅ Original animated confirmation popup
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -62,9 +89,7 @@ export default function OrderSuccessPopup({ show, onClose }) {
             className="bg-gray-900 border border-gray-700 rounded-3xl p-10 text-center shadow-2xl max-w-sm w-full"
           >
             <FaCheckCircle className="text-green-400 text-6xl mx-auto mb-4 animate-bounce" />
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Order Confirmed!
-            </h2>
+            <h2 className="text-2xl font-bold text-white mb-2">Order Confirmed!</h2>
             <p className="text-gray-400 mb-6">
               Your order has been successfully placed and sent to the kitchen 🍽️
             </p>
@@ -78,8 +103,8 @@ export default function OrderSuccessPopup({ show, onClose }) {
         </motion.div>
       )}
 
+      {/* Receipt popup */}
       {show && showReceipt && (
-        // ✅ Animated receipt popup
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -87,11 +112,11 @@ export default function OrderSuccessPopup({ show, onClose }) {
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 overflow-y-auto"
         >
           <motion.div
+            ref={receiptRef}
             initial={{ y: 80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 80, opacity: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            ref={receiptRef}
             className="bg-white text-black rounded-3xl shadow-2xl w-[450px] p-8 relative"
           >
             <h2 className="text-center text-2xl font-bold text-green-600 mb-4">
@@ -103,24 +128,15 @@ export default function OrderSuccessPopup({ show, onClose }) {
             <hr className="border-dashed border-gray-400 mb-4" />
 
             <div className="text-sm space-y-1 mb-4">
-              <p>
-                <strong>Order ID:</strong> ORD-2045
-              </p>
-              <p>
-                <strong>Customer:</strong> John Doe
-              </p>
-              <p>
-                <strong>Table:</strong> 12
-              </p>
-              <p>
-                <strong>Payment Mode:</strong>Cash
-              </p>
-              <p>
-                <strong>Date:</strong> {new Date().toLocaleString()}
-              </p>
+              <p><strong>Order ID:</strong> {order.orderId}</p>
+              <p><strong>Customer:</strong> {order.customer.name}</p>
+              <p><strong>Table:</strong> {order.customer.table}</p>
+              <p><strong>Payment Mode:</strong> {order.paymentMode}</p>
+              <p><strong>Date:</strong> {new Date(order.date).toLocaleString()}</p>
+              <p><strong>Employee:</strong> {order.employee}</p>
             </div>
 
-            <table className="w-full text-sm border border-gray-300">
+            <table className="w-full text-sm border border-gray-300 mb-4">
               <thead>
                 <tr className="bg-gray-100">
                   <th className="p-2">Item</th>
@@ -129,32 +145,24 @@ export default function OrderSuccessPopup({ show, onClose }) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="p-2">Mexican Tacos</td>
-                  <td className="p-2 text-center">2</td>
-                  <td className="p-2 text-right">$12.77</td>
-                </tr>
-                <tr>
-                  <td className="p-2">Submarine Sandwich</td>
-                  <td className="p-2 text-center">2</td>
-                  <td className="p-2 text-right">$19.46</td>
-                </tr>
-                <tr>
-                  <td className="p-2">Garlic Toast</td>
-                  <td className="p-2 text-center">2</td>
-                  <td className="p-2 text-right">$8.69</td>
-                </tr>
+                {order.orders.map((item, i) => (
+                  <tr key={i}>
+                    <td className="p-2">{item.name}</td>
+                    <td className="p-2 text-center">{item.qty}</td>
+                    <td className="p-2 text-right">
+                      ${(item.qty * parseFloat(item.price.replace("$", ""))).toFixed(2)}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
 
             <div className="mt-4 text-sm space-y-1 text-right">
-              <p>Subtotal: $40.92</p>
-              <p>Service Charge (10%): $4.09</p>
-              <p>GST (5%): $2.04</p>
+              <p>Subtotal: ${subtotal.toFixed(2)}</p>
+              <p>Service Charge (10%): ${serviceCharge.toFixed(2)}</p>
+              <p>GST (5%): ${gst.toFixed(2)}</p>
               <hr className="border-dashed border-gray-400 my-2" />
-              <p className="font-bold text-lg text-green-600">
-                Grand Total: $47.05
-              </p>
+              <p className="font-bold text-lg text-green-600">Grand Total: ${grandTotal.toFixed(2)}</p>
             </div>
 
             <p className="text-center text-xs text-gray-500 mt-4">
@@ -163,10 +171,7 @@ export default function OrderSuccessPopup({ show, onClose }) {
 
             <div className="flex justify-center gap-3 mt-6">
               <button
-                onClick={() => {
-                  setShowReceipt(false);
-                  onClose();
-                }}
+                onClick={() => { setShowReceipt(false); onClose(); }}
                 className="bg-gray-800 text-white px-5 py-2 rounded-full hover:bg-gray-900"
               >
                 Close

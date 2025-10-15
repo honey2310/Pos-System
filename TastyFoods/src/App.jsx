@@ -9,6 +9,12 @@ import OrderPage from "./Components/Employeedash/OrderPage";
 import History from "./Components/Employeedash/History";
 import Reports from "./Components/Employeedash/Reports";
 import ConfirmOrderPage from "./Components/Employeedash/ConfirmOrder";
+import PendingOrders from "./Components/Managerdash/PendingOrders";
+import ProductsPage from "./Components/Managerdash/Products";
+import ProductForm from "./Components/Managerdash/ProductAddForm";
+import CustomerPage from "./Components/Managerdash/CustomerPage";
+import EmployeeDetails from "./Components/Managerdash/EmployeeDetails";
+import EditProduct from "./Components/Managerdash/ProductEditForm";
 
 export default function App() {
   return (
@@ -22,13 +28,20 @@ export default function App() {
       {/* Step 3: Manager and Employee login routes */}
       <Route path="/manager-login" element={<LoginPage role="Manager" />} />
       <Route path="/employee-login" element={<LoginPage role="Employee" />} />
-      <Route path="/manager-dashboard" element={<MD />} />
       <Route path="/employee-dashboard" element={<Ed />} />
-      <Route path="/employee-orderpage" element={<ConfirmOrderPage/>} />
-
+      <Route path="/employee-orderpage" element={<ConfirmOrderPage />} />
       <Route path="/employee-order" element={<OrderPage />} />
       <Route path="/employee-history" element={<History />} />
       <Route path="/employee-reports" element={<Reports />} />
+
+      <Route path="/manager-dashboard" element={<MD />} />
+      <Route path="/manager-pendingorders" element={<PendingOrders />} />
+      <Route path="/products" element={<ProductsPage />} />
+      <Route path="/add-product" element={<ProductForm />} />
+      <Route path="/edit-product/:id" element={<EditProduct />} />
+      <Route path="/manager-customers" element={<CustomerPage/>} />
+      <Route path="/manager-employeesdetails" element={<EmployeeDetails/>} />
+      <Route path="/manager-employeesdetails" element={<EmployeeDetails/>} />
     </Routes>
   );
 }

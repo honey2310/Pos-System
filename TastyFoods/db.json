@@ -1,469 +1,556 @@
 {
-    "manager": [
-      {
-        "id": 1,
-        "name": "Rahul Mehta",
-        "email": "rahul@burgerboss.com",
-        "password": "admin123",
-        "role": "Manager",
-        "img": "https://randomuser.me/api/portraits/men/45.jpg"
-      }
-    ],
-    "employees": [
-      {
-        "id": 1,
-        "name": "Aman Patel",
-        "role": "Waiter",
-        "contact": "9876543210",
-        "salary": 15000,
-        "email": "aman@tastyfoods.com",
-        "password": "1234",
-        "totalSales": 4800,
-        "totalOrders": 12,
-        "img": "https://randomuser.me/api/portraits/men/36.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Priya Sharma",
-        "role": "Waiter",
-        "contact": "9988776655",
-        "salary": 15500,
-        "email": "priya@tastyfoods.com",
-        "password": "1234",
-        "totalSales": 6250,
-        "totalOrders": 15,
-        "img": "https://randomuser.me/api/portraits/women/44.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Vikram Desai",
-        "role": "Waiter",
-        "contact": "9090909090",
-        "salary": 16000,
-        "email": "vikram@tastyfoods.com",
-        "password": "1234",
-        "totalSales": 7120,
-        "totalOrders": 18,
-        "img": "https://randomuser.me/api/portraits/men/55.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Sneha Nair",
-        "role": "Cashier",
-        "contact": "9700112233",
-        "salary": 18000,
-        "email": "sneha@tastyfoods.com",
-        "password": "1234",
-        "totalSales": 8300,
-        "totalOrders": 19,
-        "img": "https://randomuser.me/api/portraits/women/65.jpg"
-      }
-    ],
-    "menu": [
-      {
-        "id": 1,
-        "name": "Classic Veg Burger",
-        "category": "Burger",
-        "price": 1.44,
-        "available": true,
-        "taxRate": 5,
-        "description": "Crispy veg patty, lettuce & mayo.",
-        "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 2,
-        "name": "Cheese Burst Burger",
-        "category": "Burger",
-        "price": 1.92,
-        "available": true,
-        "taxRate": 5,
-        "description": "Extra cheese & double patty delight.",
-        "img": "https://images.unsplash.com/photo-1606755962773-0e9b48e6105d",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 3,
-        "name": "Chicken Crunch Burger",
-        "category": "Chicken",
-        "price": 2.28,
-        "available": true,
-        "taxRate": 5,
-        "description": "Juicy chicken patty with spicy sauce.",
-        "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 4,
-        "name": "Paneer Tikka Burger",
-        "category": "Burger",
-        "price": 1.80,
-        "available": true,
-        "taxRate": 5,
-        "description": "Soft paneer grilled with spicy tikka flavor.",
-        "img": "https://images.unsplash.com/photo-1627308595121-2e1e4eab444d",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 5,
-        "name": "Double Cheese Burger",
-        "category": "Burger",
-        "price": 2.40,
-        "available": true,
-        "taxRate": 5,
-        "description": "Two juicy patties with double cheese.",
-        "img": "https://images.unsplash.com/photo-1550547660-d9450f859349",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 6,
-        "name": "Tandoori Chicken Burger",
-        "category": "Chicken",
-        "price": 2.52,
-        "available": true,
-        "taxRate": 5,
-        "description": "Tandoori spiced grilled chicken burger.",
-        "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 7,
-        "name": "Grilled Chicken Sandwich",
-        "category": "Sandwich",
-        "price": 2.16,
-        "available": true,
-        "taxRate": 5,
-        "description": "Grilled sandwich with spicy chicken filling.",
-        "img": "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 8,
-        "name": "Club Sandwich",
-        "category": "Sandwich",
-        "price": 1.92,
-        "available": true,
-        "taxRate": 5,
-        "description": "Triple-layered veg sandwich with mayo.",
-        "img": "https://images.unsplash.com/photo-1627308595049-3269c7b77c3b",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 9,
-        "name": "Veggie Pizza Slice",
-        "category": "Pizza",
-        "price": 1.44,
-        "available": true,
-        "taxRate": 5,
-        "description": "Cheesy veggie-loaded pizza slice.",
-        "img": "https://images.unsplash.com/photo-1601924582971-c7512fa3a369",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 10,
-        "name": "Pepperoni Pizza Slice",
-        "category": "Pizza",
-        "price": 1.92,
-        "available": true,
-        "taxRate": 5,
-        "description": "Pepperoni slice with extra cheese.",
-        "img": "https://images.unsplash.com/photo-1601924582971-3d9fbd6e23cf",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 11,
-        "name": "Coke 500ml",
-        "category": "Drinks",
-        "price": 0.72,
-        "available": true,
-        "taxRate": 12,
-        "description": "Chilled soft drink.",
-        "img": "https://images.unsplash.com/photo-1613470209377-6ab6d9d984a4",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 12,
-        "name": "Cold Coffee",
-        "category": "Drinks",
-        "price": 1.08,
-        "available": true,
-        "taxRate": 12,
-        "description": "Blended coffee with ice & milk.",
-        "img": "https://images.unsplash.com/photo-1601315576607-6bffb3cdd3b3",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 13,
-        "name": "Oreo Shake",
-        "category": "Drinks",
-        "price": 1.56,
-        "available": true,
-        "taxRate": 12,
-        "description": "Thick shake with Oreo biscuits.",
-        "img": "https://images.unsplash.com/photo-1606813902913-ef5d8d0d6bdf",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 14,
-        "name": "Mojito",
-        "category": "Drinks",
-        "price": 1.20,
-        "available": true,
-        "taxRate": 12,
-        "description": "Refreshing mint & lemon mocktail.",
-        "img": "https://images.unsplash.com/photo-1621592167506-3e1b7d1f4ff3",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 15,
-        "name": "Strawberry Shake",
-        "category": "Drinks",
-        "price": 1.44,
-        "available": true,
-        "taxRate": 12,
-        "description": "Fresh strawberry milkshake.",
-        "img": "https://images.unsplash.com/photo-1565958011705-44e2118b6a4c",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 16,
-        "name": "Chicken Wings",
-        "category": "Chicken",
-        "price": 2.16,
-        "available": true,
-        "taxRate": 5,
-        "description": "Spicy grilled chicken wings with sauce.",
-        "img": "https://images.unsplash.com/photo-1604908177443-0070b9f29f12",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 17,
-        "name": "Butter Chicken Pasta",
-        "category": "Pasta",
-        "price": 2.28,
-        "available": true,
-        "taxRate": 5,
-        "description": "Creamy pasta tossed in butter chicken sauce.",
-        "img": "https://images.unsplash.com/photo-1617196034913-1d4e9a8f4a06",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 18,
-        "name": "White Sauce Pasta",
-        "category": "Pasta",
-        "price": 1.80,
-        "available": true,
-        "taxRate": 5,
-        "description": "Cheesy white sauce pasta with herbs.",
-        "img": "https://images.unsplash.com/photo-1589307004173-3c9520c6b58b",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 19,
-        "name": "Arrabbiata Pasta",
-        "category": "Pasta",
-        "price": 1.92,
-        "available": false,
-        "taxRate": 5,
-        "description": "Spicy red sauce pasta with Italian herbs.",
-        "img": "https://images.unsplash.com/photo-1599785209707-28f4f943fd0b",
-        "tag": "OUT OF STOCK"
-      },
-      {
-        "id": 20,
-        "name": "Grilled Chicken Pizza",
-        "category": "Pizza",
-        "price": 2.28,
-        "available": true,
-        "taxRate": 5,
-        "description": "Pizza topped with grilled chicken and cheese.",
-        "img": "https://images.unsplash.com/photo-1601924582971-c7512fa3a369",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 21,
-        "name": "BBQ Chicken Pizza",
-        "category": "Pizza",
-        "price": 2.64,
-        "available": true,
-        "taxRate": 5,
-        "description": "Loaded with smoky BBQ chicken, cheese & onion.",
-        "img": "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 22,
-        "name": "Veg Supreme Pizza",
-        "category": "Pizza",
-        "price": 2.16,
-        "available": true,
-        "taxRate": 5,
-        "description": "Topped with corn, peppers, and extra cheese.",
-        "img": "https://images.unsplash.com/photo-1601924582971-3d9fbd6e23cf",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 23,
-        "name": "Chocolate Shake",
-        "category": "Drinks",
-        "price": 1.32,
-        "available": true,
-        "taxRate": 12,
-        "description": "Creamy chocolate milkshake with cocoa drizzle.",
-        "img": "https://images.unsplash.com/photo-1613470209377-6ab6d9d984a4",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 24,
-        "name": "Garlic Bread",
-        "category": "Pizza",
-        "price": 1.44,
-        "available": true,
-        "taxRate": 5,
-        "description": "Toasted bread with garlic butter & herbs.",
-        "img": "https://images.unsplash.com/photo-1606813902913-ef5d8d0d6bdf",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 25,
-        "name": "Spicy Chicken Sandwich",
-        "category": "Sandwich",
-        "price": 2.04,
-        "available": true,
-        "taxRate": 5,
-        "description": "Grilled sandwich with spicy chicken & cheese.",
-        "img": "https://images.unsplash.com/photo-1594007654729-407eedc4be65",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 26,
-        "name": "Chicken Alfredo Pasta",
-        "category": "Pasta",
-        "price": 2.40,
-        "available": true,
-        "taxRate": 5,
-        "description": "Creamy white sauce pasta with grilled chicken.",
-        "img": "https://images.unsplash.com/photo-1617196034913-1d4e9a8f4a06",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 27,
-        "name": "Crispy Chicken Strips",
-        "category": "Chicken",
-        "price": 2.28,
-        "available": true,
-        "taxRate": 5,
-        "description": "Crispy fried chicken strips served with dip.",
-        "img": "https://images.unsplash.com/photo-1604908177443-0070b9f29f12",
-        "tag": "10% OFF"
-      },
-      {
-        "id": 28,
-        "name": "Iced Lemon Tea",
-        "category": "Drinks",
-        "price": 1.08,
-        "available": true,
-        "taxRate": 12,
-        "description": "Refreshing iced tea with lemon twist.",
-        "img": "https://images.unsplash.com/photo-1621592167506-3e1b7d1f4ff3",
-        "tag": "15% OFF"
-      },
-      {
-        "id": 29,
-        "name": "Spaghetti Bolognese",
-        "category": "Pasta",
-        "price": 2.64,
-        "available": true,
-        "taxRate": 5,
-        "description": "Classic Italian spaghetti with meat sauce.",
-        "img": "https://images.unsplash.com/photo-1589307004173-3c9520c6b58b",
-        "tag": "20% OFF"
-      },
-      {
-        "id": 30,
-        "name": "Peri Peri Chicken Burger",
-        "category": "Chicken",
-        "price": 2.40,
-        "available": true,
-        "taxRate": 5,
-        "description": "Spicy peri peri chicken burger with lettuce & mayo.",
-        "img": "https://images.unsplash.com/photo-1612874742237-6526221588e3",
-        "tag": "20% OFF"
-      }
-    ],
-    "orders": [
-      {
-        "id": 101,
-        "employeeId": 1,
-        "customerName": "Ravi Kumar",
-        "tableNumber": 3,
-        "status": "Completed",
-        "date": "2025-10-09",
-        "items": [
-          { "menuId": 2, "name": "Cheese Burst Burger", "quantity": 2, "price": 1.92 },
-          { "menuId": 11, "name": "Coke 500ml", "quantity": 2, "price": 0.72 }
-        ],
-        "subtotal": 6.24,
-        "tax": 0.31,
-        "discount": 0,
-        "total": 6.55,
-        "paymentMethod": "UPI"
-      },
-      {
-        "id": 102,
-        "employeeId": 2,
-        "customerName": "Anjali Gupta",
-        "tableNumber": 1,
-        "status": "Completed",
-        "date": "2025-10-09",
-        "items": [
-          { "menuId": 3, "name": "Chicken Crunch Burger", "quantity": 1, "price": 2.28 },
-          { "menuId": 13, "name": "Oreo Shake", "quantity": 1, "price": 1.56 }
-        ],
-        "subtotal": 3.84,
-        "tax": 0.19,
-        "discount": 0.20,
-        "total": 3.83,
-        "paymentMethod": "Cash"
-      },
-      {
-        "id": 103,
-        "employeeId": 3,
-        "customerName": "Snehal Deshmukh",
-        "tableNumber": 2,
-        "status": "Pending",
-        "date": "2025-10-10",
-        "items": [
-          { "menuId": 1, "name": "Classic Veg Burger", "quantity": 1, "price": 1.44 },
-          { "menuId": 14, "name": "Mojito", "quantity": 1, "price": 1.20 }
-        ],
-        "subtotal": 2.64,
-        "tax": 0.13,
-        "discount": 0,
-        "total": 2.77,
-        "paymentMethod": "Card"
-      }
-    ],
-    "reports": {
+  "manager": [
+    {
+      "id": "1",
+      "name": "Rahul Mehta",
+      "email": "rahul@burgerboss.com",
+      "password": "admin123",
+      "role": "Manager",
+      "img": "https://randomuser.me/api/portraits/men/45.jpg"
+    }
+  ],
+  "employees": [
+    {
+      "id": "1",
+      "name": "Aman Patel",
+      "role": "Waiter",
+      "contact": "9876543210",
+      "salary": 15000,
+      "email": "aman@tastyfoods.com",
+      "password": "1234",
+      "totalSales": 4800,
+      "totalOrders": 12,
+      "img": "https://randomuser.me/api/portraits/men/36.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Priya Sharma",
+      "role": "Waiter",
+      "contact": "9988776655",
+      "salary": 15500,
+      "email": "priya@tastyfoods.com",
+      "password": "1234",
+      "totalSales": 6250,
+      "totalOrders": 15,
+      "img": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Vikram Desai",
+      "role": "Waiter",
+      "contact": "9090909090",
+      "salary": 16000,
+      "email": "vikram@tastyfoods.com",
+      "password": "1234",
+      "totalSales": 7120,
+      "totalOrders": 18,
+      "img": "https://randomuser.me/api/portraits/men/55.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Sneha Nair",
+      "role": "Cashier",
+      "contact": "9700112233",
+      "salary": 18000,
+      "email": "sneha@tastyfoods.com",
+      "password": "1234",
+      "totalSales": 8300,
+      "totalOrders": 19,
+      "img": "https://randomuser.me/api/portraits/women/65.jpg"
+    },
+    {
+      "id": "a680",
+      "name": "Amit Mishra",
+      "role": "Cashier",
+      "contact": "8876543212",
+      "salary": 30000,
+      "email": "amit@tastyfoods.com",
+      "totalSales": 0,
+      "totalOrders": 0,
+      "img": "data:image/jpeg;base64,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"
+    }
+  ],
+  "menu": [
+    {
+      "name": "Cheese Burst Burger",
+      "category": "Burger",
+      "description": "Extra cheese & double patty delight.",
+      "price": 1.92,
+      "img": "https://media.istockphoto.com/id/1430067822/photo/fresh-tasty-burger-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=19uZEv4sJaCtaHAY-HuW6Wbb1Nt6xjRILZKtwKSQBWY=",
+      "tag": "15% OFF",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Chicken Crunch Burger",
+      "category": "Chicken",
+      "price": 2.28,
+      "available": true,
+      "taxRate": 5,
+      "description": "Juicy chicken patty with spicy sauce.",
+      "img": "https://images.unsplash.com/photo-1613160775054-d4a634592b7f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fENoaWNrZW4lMjBDcnVuY2glMjBCdXJnZXJ8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "name": "Paneer Tikka Burger",
+      "category": "Burger",
+      "description": "Soft paneer grilled with spicy tikka flavor.",
+      "price": 1.8,
+      "img": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJ1cmdlciUyMGtpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "name": "Double Cheese Burger",
+      "category": "Burger",
+      "price": 2.4,
+      "available": true,
+      "taxRate": 5,
+      "description": "Two juicy patties with double cheese.",
+      "img": "https://images.unsplash.com/photo-1550547660-d9450f859349",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "6",
+      "name": "Tandoori Chicken Burger",
+      "category": "Chicken",
+      "price": 2.52,
+      "available": true,
+      "taxRate": 5,
+      "description": "Tandoori spiced grilled chicken burger.",
+      "img": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGJ1cmdlciUyMGtpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "7",
+      "name": "Grilled Chicken Sandwich",
+      "category": "Sandwich",
+      "price": 2.16,
+      "available": true,
+      "taxRate": 5,
+      "description": "Grilled sandwich with spicy chicken filling.",
+      "img": "https://images.unsplash.com/photo-1730312382518-d8001e2558db?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEdyaWxsZWQlMjBDaGlja2VuJTIwU2FuZHdpY2h8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "8",
+      "name": "Club Sandwich",
+      "category": "Sandwich",
+      "price": 1.92,
+      "available": true,
+      "taxRate": 5,
+      "description": "Triple-layered veg sandwich with mayo.",
+      "img": "https://plus.unsplash.com/premium_photo-1673809798692-494b974088a4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2x1YiUyMFNhbmR3aWNofGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "9",
+      "name": "Veggie Pizza Slice",
+      "category": "Pizza",
+      "price": 1.44,
+      "available": true,
+      "taxRate": 5,
+      "description": "Cheesy veggie-loaded pizza slice.",
+      "img": "https://images.unsplash.com/photo-1750680230010-0954f5336a47?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fFZlZ2dpZSUyMFBpenphJTIwU2xpY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "10",
+      "name": "Pepperoni Pizza Slice",
+      "category": "Pizza",
+      "price": 1.92,
+      "available": true,
+      "taxRate": 5,
+      "description": "Pepperoni slice with extra cheese.",
+      "img": "https://images.unsplash.com/photo-1648679708301-3e2865043526?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fFBlcHBlcm9uaSUyMFBpenphJTIwU2xpY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "11",
+      "name": "Coke 500ml",
+      "category": "Drinks",
+      "price": 0.72,
+      "available": true,
+      "taxRate": 12,
+      "description": "Chilled soft drink.",
+      "img": "https://images.unsplash.com/photo-1543253687-c931c8e01820?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fENva2UlMjA1MDBtbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "12",
+      "name": "Cold Coffee",
+      "category": "Drinks",
+      "price": 1.08,
+      "available": true,
+      "taxRate": 12,
+      "description": "Blended coffee with ice & milk.",
+      "img": "https://images.unsplash.com/photo-1625242662341-5e92c5101338?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y29sZCUyMGNvZmZlZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "13",
+      "name": "Oreo Shake",
+      "category": "Drinks",
+      "price": 1.56,
+      "available": true,
+      "taxRate": 12,
+      "description": "Thick shake with Oreo biscuits.",
+      "img": "https://images.unsplash.com/photo-1541658016709-82535e94bc69?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG9yZW8lMjBzaGFrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "14",
+      "name": "Mojito",
+      "category": "Drinks",
+      "price": 1.2,
+      "available": true,
+      "taxRate": 12,
+      "description": "Refreshing mint & lemon mocktail.",
+      "img": "https://plus.unsplash.com/premium_photo-1722194069211-199c1b4a2e0c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9qaXRvfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "15",
+      "name": "Strawberry Shake",
+      "category": "Drinks",
+      "price": 1.44,
+      "available": true,
+      "taxRate": 12,
+      "description": "Fresh strawberry milkshake.",
+      "img": "https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3RyYXdiZXJyeSUyMHNoYWtlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "16",
+      "name": "Chicken Wings",
+      "category": "Chicken",
+      "price": 2.16,
+      "available": true,
+      "taxRate": 5,
+      "description": "Spicy grilled chicken wings with sauce.",
+      "img": "https://images.unsplash.com/photo-1600555379765-f82335a7b1b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q2hpY2tlbiUyMFdpbmdzfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "17",
+      "name": "Butter Chicken Pasta",
+      "category": "Pasta",
+      "price": 2.28,
+      "available": true,
+      "taxRate": 5,
+      "description": "Creamy pasta tossed in butter chicken sauce.",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5fX8beWTyqBqG-x9ygrAc0xXx0Fo-i61BdA&s",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "18",
+      "name": "White Sauce Pasta",
+      "category": "Pasta",
+      "price": 1.8,
+      "available": true,
+      "taxRate": 5,
+      "description": "Cheesy white sauce pasta with herbs.",
+      "img": "https://images.unsplash.com/photo-1702827762413-5e65a63cf700?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "19",
+      "name": "Arrabbiata Pasta",
+      "category": "Pasta",
+      "price": 1.92,
+      "available": false,
+      "taxRate": 5,
+      "description": "Spicy red sauce pasta with Italian herbs.",
+      "img": "https://media.istockphoto.com/id/484190075/photo/arrabiata-pasta.webp?a=1&b=1&s=612x612&w=0&k=20&c=7GqOWLnFi_0FGtWogP4ja-UrGACXjC-FCk4wnYrJ3io=",
+      "tag": "OUT OF STOCK"
+    },
+    {
+      "id": "20",
+      "name": "Grilled Chicken Pizza",
+      "category": "Pizza",
+      "price": 2.28,
+      "available": true,
+      "taxRate": 5,
+      "description": "Pizza topped with grilled chicken and cheese.",
+      "img": "https://images.unsplash.com/photo-1597715474989-9ae8683704b3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R3JpbGxlZCUyMENoaWNrZW4lMjBQaXp6YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "21",
+      "name": "BBQ Chicken Pizza",
+      "category": "Pizza",
+      "price": 2.64,
+      "available": true,
+      "taxRate": 5,
+      "description": "Loaded with smoky BBQ chicken, cheese & onion.",
+      "img": "https://images.unsplash.com/photo-1662022613083-2b76200e460c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fEJCUSUyMENoaWNrZW4lMjBQaXp6YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "22",
+      "name": "Veg Supreme Pizza",
+      "category": "Pizza",
+      "price": 2.16,
+      "available": true,
+      "taxRate": 5,
+      "description": "Topped with corn, peppers, and extra cheese.",
+      "img": "https://plus.unsplash.com/premium_photo-1722945691819-e58990e7fb27?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VmVnJTIwU3VwcmVtZSUyMFBpenphfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "23",
+      "name": "Chocolate Shake",
+      "category": "Drinks",
+      "price": 1.32,
+      "available": true,
+      "taxRate": 12,
+      "description": "Creamy chocolate milkshake with cocoa drizzle.",
+      "img": "https://plus.unsplash.com/premium_photo-1667544654787-cd984212004d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fENob2NvbGF0ZSUyMFNoYWtlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "24",
+      "name": "Garlic Bread",
+      "category": "Pizza",
+      "price": 1.44,
+      "available": true,
+      "taxRate": 5,
+      "description": "Toasted bread with garlic butter & herbs.",
+      "img": "https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8R2FybGljJTIwQnJlYWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "25",
+      "name": "Spicy Chicken Sandwich",
+      "category": "Sandwich",
+      "price": 2.04,
+      "available": true,
+      "taxRate": 5,
+      "description": "Grilled sandwich with spicy chicken & cheese.",
+      "img": "https://media.istockphoto.com/id/2206815142/photo/chicken-sandwich-with-seasoned-french-fries.webp?a=1&b=1&s=612x612&w=0&k=20&c=qUBvA61BtIV-NJbV4gK838-QN1ITYzubOWAMBYYFIBo=",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "26",
+      "name": "Chicken Alfredo Pasta",
+      "category": "Pasta",
+      "price": 2.4,
+      "available": true,
+      "taxRate": 5,
+      "description": "Creamy white sauce pasta with grilled chicken.",
+      "img": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExIWFRUXFRcVFxUYGBcXGBgXFxUWFxUVGBoYHSggGBolHRUYITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lHyUvLS0yLS4tLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAFAQIDBAYABwj/xABEEAABAwEGAwUECAMHAwUAAAABAgMRAAQFEiExQVFhcQYTIoGRMqHR8BQjQlJiscHhFVNyBzNDgpLC8WOi0hYkVFWy/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAKxEAAgICAgEEAQMEAwAAAAAAAAECEQMhEjFBEyJRYQQUMnFCgaGxUsHw/9oADAMBAAIRAxEAPwD1oIA0qNx5I1NMDLi/wirDV2pGudEUqm2DYE0vfq2SaId2hOwqBxzhWMQBa/u08KXwp4XS4qxhEuHcVKh4UwKrsXnWMWU0qmwdQKjZA29KsAVjIHWmxgZgeVVcqNqGVA1qzNc+SKW0WhKxZFdNJNJUhx011MmlmsEU0gqeypkydBVe32oJ26xQk0lbN5o40qUE6Uxy3ICZAofa7W6rJIVh5D4UOUbA7L1ofQj2lZ8BnUTNtQrRJrOXg8UEJKVYlaCJnl1q/ZUupICm1CemVZZFZuMqs0CUJO8U76PwIoXeF6NWdBU4dBpz4VjLT2+d8S0NwhMTv68KMsuNOifJnopZNMKeY9aA3J2h+ksoeHhMkYdcwYojbrbhRKkjEdIqX6jHcl8FVGTot4eYp6LMTvQuyWrEBJjPXlVpKXFew6FDlVMc4zVo0lKPZd+gE7+6uVdytiKpEvJ1Kqc3eDg+1NU9nlC+4c5ZFp1T6Z1AVURZvSdakcSheoHXet6afTMptdgcOUizU9ssxRzHH41TK6lJV2VTvoeMhSGm4jTFrpBkhFGkkVXecqMLpLHSPQq6o0LBp816x5xUtCc6iiry01Aps8KwCIUtSJYNPFn41jEFKlsmrKWwK5xyNKxhLO2RNWKEW2+G2RLjiU9SJrN27tetwEMJwo3dXkPIb0kppDJM0t83slsYAZWdB+pocyo4QazFjcxHFJIJzWrVZ4DlWiaXlUZS5DxVFmaRx4JEqMDLM88hQq97cpCClAJWoEDDhlM5Y/FllM+VYH6Xa31KQm0qwpBBQqcJhRkmQSTJGYg5CDw5ZZvdwXY7kkantnfa2sBYeAMwUZeLLEFBRECNwTEHyIu5e2q1uhpWJSlpTBBThSVeL0GLXM5bQJyFutThVhKIkRJVMQVJUT+KScstalSlDKz3ayRIOLKZBzTI+cq55zlVvsXGnKVHuKVlLfiieWlBUud8opQQYMK4JOsGhlit6vo4USo4swDOUjPyqCz3gESE5YjJ5mAPyFZ5eVWdKxtWaZ9DOEhXikQRJCeYy1Fc68SjGnIDLLhx6VnXHpAGpJmZjCQJE5ieG+cUcN4BOBJAiNiYjL1oqdu5aQHGuhtmtqQkFStDqfjTnLYkqhKpJ036VKxZ0x4EgpOZBg65xntUTt1pU4lwqS3EyEAycsswQB760oZFVMRSTvRgb8uK87SteIBQz1ISmNoHGqXYXsyVvONWlK0pCSSCSMRmB13r1V51rJJWrpIHrv76C9orwaZaLiMlykDNRmT7OvCfOKZ66FjFLbQ6x9lEsJDbSyEg4p1UZ1q+5Y28OFaifdTU3hASvRUAwdcxoae5ag83tIOtQjmxybrstUkvoqY2kwgA61ZtAbbRKTgI8RPHrVO6bIt18uEFLaBgAI9te6ug0q/etzB3IrIG8bjhyq8VPjaEbjexLBfONAUDNSO3i2dQkxrFdZ7A0hISE4ED1PGetYPtheJBKEHClJySmKfL+S4V9klHej0AMNqzSopPPOnIYcTmCFdKwnYi/VuphZkjetuy7XVHjJWgNvyXEPE5KHUGqFtsJHiTmn8quJfNTItWxFM4KWmZScejPg0ikmjb1kQrNORqi/ZVJ1E9KhLG0WjkTBTqagg1ecaqPuU1BlkFWr/sp0fAPPKr7V7snR5B8xWQdbdV/hWd3mDFUXbHxu9J/pUK9Lmzg4non8Va/mp9RUS77ZGryB5ivNnLGn/69f8AqqI2QbXcfNQoeow8UehP9rLInW0I8jQ9/t/ZB7JU4fwpJrG/R3B7NjZRzUoGmOOPD2nrO0PwgE0rySDwRp3u3Tyv7myq/qXCRQW8e0NqV/e2lDI+6jxKoM4ttXtWh54/dQCB7qlZZw5osyWx995WfWKm5N9sZRQ5g4zibaW6r+a8cusGrTYCleNXfLH2E5Np60677udtJ8JW+Pw/VsjqvfoJrSM3Kwyn69YV/wBFrwo6KOqvd0pelbD9AZl51asDKC67oSkfVtjhOk1rLNZw0gG0OAGM0pM++qD95u4QiztJbbxJTIhIGIxoNa43aifrFLUdZkRPIRlXPk/KhDrf+iscTfev9hBsWe0eLuge7MIJmZIknmMhrwrKdq+zaw6H7OBJgrTpnEE+eXvrS2F1KSpKU4UDMmcyeZqveV4+EgZZxQjmjOPIWWLdHmH8HtK3Q2ludZVO05z5VrbL2dbblTiBM5GScoGcHQzPlFGrq0hHtHNahw4cqhvh0IASDJ250k37RoRp6KVqfyjQcKoIu99aFrlKE4hgUZnCAMRI46xU9jZlWJ3Y5D40StlvStJQR4YwwMhBpYpV7i1taRjLJb0BbaSFFKzBK1gFM5JUBAmTO21a5SFnBhClhIIBiSM5IMUGdsFmxBwIKiIjUjI5Z6HWjdgawJSptZCFicKtUndIjblRcYyVGetoP2BJiCmCRMTodxlp+9D70ecC8MIwkAJUCZK5MpIPs5RGeeY4TC7aAjxFcfr5VQtN8I9tZGA68ufuNUdNcWRindot2RhbhgqCeIMyOWkUJve67Q4tLXeACQcIAg6RnVdm81d5gIJP3gYCgRKSFbgiCFc/TRNYTC8JSoRGZ241B42v29lnvsjt11rKYS5LgT7JGpG0iqnZ9/uzBJzElB1SQcwelHbO9izIBPGmPsWfvO9UQFgROOMuYmtj/HinbQknKqCCbw8KQAQVKgCDpx5VIu2ISruwolZzqgm+7OgAd6gRzn371Tc7R2MHFjSTxAJPrFWlyfTQqh9Etusz6iVFQiB4JgjnNDU9lEFRK1YpzyJNWHO2VmH2lH/KarL7dsbIWfQUnoxu2Nxl8DbuuIIXiwOJJ+6kYctzO9aSzskamsk7/aAnZk+oqq5/aCrZoDqfhVoS4KkxfRbN8mu8q84c7b2hXsoSOcE1H/6gvFfsoUf6WifTKm9ag+geld5XLtKhvHp+teaLXei8sLw/7PzIp47M3msYlgpG5W6gf7iaKyTlpG9KC7ZuLU+nVSwPMCqBvNgauo9RXnz10PYsJcSdslKI/KiKOxLkZvon+kn9RSN/JRRRMe1FnP8AeWSDxQqPhSjtBYj/APJR0UT+tD3LEOFVF3eKRflS8jP8aHgMLvyx/wA+1DzNV3L5sf8ANtKv8x+NCV3cKhN3im/Ug/SxCLt82L+U8v8AqWfjUC+0TSf7uyNjmozRW6OwL78KI7pv77mWX4U6q9w51sLo7N3fZVCE9+7PtuAFIP4U6D3nnVOUq5S0iclji6W2ZO5bHelsALSEsNH/ABCnAmPwyJV5COdaixdmLGxCn1qtjo++fqweSJj1mj9oeW5IhShwBgD0qp/B1KGJKsPJf7Z+6lWeL/Zv7YjT86/gbar1WRhEISMglOQjyoRZ0hbwSVEzt02FHv4ewkeMlRAzMkD3Gq93OtM5+AzosDM8iTp0rmyTU37pDxVLSCVmRhSfBEaDhA1oNeN9YVBnDKlDJeUA8DO5zjKrdtvxGEyoJQBmaC3r2g+jR3baFGBiUVEKGcxEaQRv5VJySaUXoz0nyBd9Wl0KLYBwJQCYIOpkhY1KstSeMUqL0ZeASAUuJSAsRhBMDEpMEyJMazVi02gWtvv4IOKDwMDIpOpHwqG77nVjQ4MKsSgFZESn2VaaZCRzpfU5NpIlC4y+gnZraG0QhMkgDgNKFKfBWcSwpfCdOXKtc7cTKkFJ8MjVJM+/as0nsr9HWVKQFJJ9tIzPUDeutQl/UWUo+ClaXXNEICuXP560+7m1qI73bY5flkaJWa1NJOU5ncGtBYw24kKwZHKCN+VFQA5uuiiu02dCB3hSBsNz0jWhluvLGEtpbKW1k+IxtHnPwob2nsiW7agpT4SgFZ1zlUAcTlXX446/3KWAoYFFRhJzMAAdMz8itJvpmUVphW0WGxuoAeBkQnFiKSJmMxQ68OyoQhXdKLrRglCj40jKSkjJWk9UjXOiFks1oCQXWhBjxSBJ10k+tF2nCEpgAEzAkAmDtt76CnTpmaa6MZY32mcLZJVA8BA2JOWZ9knbYk86I3rabR3IWwEx9pIEqTOhE6jpp0mr9ouZKiVrCGyokoQdDpuMhMTHOu+jOoIIZKhGeEhQKuEDOKLmldIN2YxNjtywVrLkYSo4lRkIk4Z5iq3cSkqxggRJmf3rZ2qzWt7E2bOuFkYiYQAmD9owDtlyoTaOyFoRiAT3kxgwQY4zw88s6hOcl0hZZZ3Soo9n7Ey8vA4paCdhh9njNagdkrKNVOHqU/omgC7pdThUW3ULHhnCr35RHOtBZLcp1HdGUvIGhGS+E8OtNjya9yEWWTdNjj2YsyR7BOcBUqVrxE5VJdvZ9tDii4whSQBh3B45E60Suu7Xgg96rEVSYTCcA2BkmSONWWLuVIT3mJGpP2un71bhtDObp7I3rrsqDiLDKQRkAhEzzyrK3t2jZZWGQkBS4SAEAeYy0rV3tZkApKUnEnJOZMjeQd6rOp704HmwUiCFKRiEjPLgahONydsKnx7VlgoBYGKFAgEjYjnVkNJWkKbGeQAGw+FOZuxJT7RCSNOXKaEXj2gas6e5swkjLHqAeM/aNdMcDe5aX/uhOd6j2ErVaGrMkKeViXska+Q/U1jr5v518xOFGyR+vGh1pfUslSySTqTUQNUcklxjpDxhu5bZau4JxjEQADJJyFaQ3nZt3Uf6hQm4bKleIrAIyEGin0Rkf4afQVJlGZ5TQP2XPSolWX/prPpWtXZat3Hd6VOeOCkCY2J2nlUY4nKSQ7y0rMvdXZZ1/wARR3Te7izt+Eb+4c60Fls1jsv9233rn8xYmD+EaDy9audq7S4CElJDcTI9nL9ayzFoKlR9nc1WUoYXS7+SNzyK30FbxvZa/aV5DSkuuwKfIUZS2DrmCqNk8udELNYLOYXggAA+Ik+gNEmLWlWJKZkDXP0nSkclJ+5i9LR1pcbbSATAGyT+Z3oXb75SE5GI2mm3rZMR9qFbcDWNvS6X3FhtasMqATGYOcedcWV5Zz4KlEtCMVG32aVu8sScWJBBQVROYTuoiNKrIsrZdTLiMAkqTOU668MtKJGxIYKQnMpbSgE8EjXqaht944FYMAgkSQBrlBy12qUJQg2mujOMm7iBbqeYtangcTgQ4UyfCkjUGBERoOk0y0WBNpcUl6zSkZJcacUMkkpSSkqAVAAoqEIJUEtypUTh1UQN41qxZrI6zEsFKZnw566yEkmuqLafsWv4IvG2/cwXZEKsx7tQyUZzBCTGQIknOAKMt3glIHh1MZAnX8hUjFtxKwQFSYwkT7qJmxMtgqw4VkbHJJ4jgabCltpjNVpoiaC/CVCATkDkT5VftigBn6VCl1JAU4MWYCRBJxbRHSZ2iagvJc6bfOlVyuSxuhY7kOs6UHFjjOADAPpPlUBsCsQUTCU5II9+W1VbctSA2MMlS8ikToBrOmp8hR6yrxCP1y5mkwxdKMhputoEsWBwOYylJ4OQJjgZzFXFMtIlWWI7xMchUF8Xj3ZGcCI6RQyVKjG4EJJEACVnONxAnLjWeWEW4I3GTSky0p8rJlWRynYchOlV7W0UqEAqAHvGv60tsv8AszaUpT4yTlv7PPfOp7M80UpJy9nKd+CqZ4l1eybzAm9HMALrqpSnAoAbAkBQPr76LWO+EKGJGhE5CMtMx5UOvGHXFNhCCkoPgmCVJVIVwjwj1qw3ayhAbcRHh0IkTJ0+NScdadDRX0X3LxkZyRrrFJZlIBnErPaR6aUF7xJ0MD8qtWZAjM1KKm5WyzUUglaLa2DuOYUf1pUvtfalXMxI89aF2ppk5eOfwn4iq1is60hOM5nUjQcNczVG8nLVC8YtGkFqSmOGnOnWy8EIgQZOyRJqo26AnIyRtlr5027bO6tXeEYAUwZiRoYyyOnSrSWZrjHz/gRcFtlW8C+Vp7tC1Zz06zoKMqtCWGwp9YngM8+A41QvS/22Bgb8a+MyAeZ36Vi7dbFuqxLUSfnSunFgWLbdv/BOUnPS0gnfnaNx6Up8DfAanr8KBGlNMJp5NvseKS0jjTYpCqrF32cuKjbc1MqjR3SxhaTxOfrVqBxqJKgMhTgqloAcUzSNow5ipjXKTVqJMt2a1BQwqAIOxz/5pv8AAWAZQgJ5AZelD6J2e1FTZG4FWTjLUkQaceik9d5CwVDEnlp5jWpnn0JykchoB5UPfv0tKhaiZ04CraXmX0jGgHnv5EVL01vi9/Y3J+TOWq0JW7lnh0Ks4G8DSlfvVKUqO6d+mvuqzeXZJRldmdzOeBenQKAy9DQRmzvNvIbeZWJOaoxIyEnxDL1rz54skO1/c6lKEvIxN9FxbeR8S0gDqQK2IsDaVd53SAqIy36jQnnUCLM2paDgA7sykjp+9SXmtOEkKIIBIPzrS48KxpyezTycmktC3HdbbZU4BE6SSYknSdNY8quOuGfaAExNZq5b1ccsiVZ94oqxcQcRAjgIAp14uWhthTiAlRSJgyZAPi03iuvHqKUUSmrlthxDqRJ+1iIkgAxOWY1Eb05ScpV1ihfZ9sGLQpZhYkIMGNAFDPKY058aMvNocEa85I9IIop2vv4Fa2Obc8E0MKFKXMGBy16VbXa2mxgSBltrHSdKFWq/FQROhqWbLDWx4Ql4Cb1kJ9pcD7qcyeU6D30w2tttGBIgAAZkk+ZJk0DevjLWhNrtxO+wz8hUXn/4oqsN9hG+FNqJIAlSZ8WIjdJjOBoaGM3gSY9rhxEET+VRQVNnkZnfCopB94H+qqtksaGwoJJBIUZJJzKTxqfBN2x3+1pAu+23yVYE+BKjhjUGBTLqtloSh0kKJGBUHrgIjqtJ8qKJvMISlBGMQrxDczvziKgatSlOJ+yFfVDL74KcXkSDXfGSejg4V2HWrXiWhz2SU9zyxJUoK/8A2DRqw2hLiQlwggjecsyJB2oBdVpQ60SAQApSxIzCkhs+WpFSsKU2sNkHIKhUGIDqxE8dK5Zx4zcjqhUo0aBm3JSAluA2ZwwCAYJB6mR8zU6bK3Hhyy00HlwquyEuIwHLdJ4HjVdKyhwtk5p34jY1ZS1fgVxsVtaQsg5wYPp+9E2bQDACQTtlP51WtFxF1aXErwj7Zj2h8edOtl7s2YYGhjXx19TVY4pN/CElJfywk6UNpK3ikTyE9OdZe+e0q3JQ34Ee89aH219x0lS1SeGw5VRUmDnV/wBqqIiV7YlNNPimkUo9kS6gUqpH3ABJMCsre16qXKGzCd1bnpwFAZFy8r6CDgR4lb8B+9X+zN4LnxGsvZbKBqa0t0AAiDU3L4KqNG3YtE1ZDlB7M6ONXkuc6NANVjpMdPStJ0pZFUIldwTU93qwqg6GkdiKiSd6KdOxWhl8XKl3koaKH6jcUJQw8xkpJgfaGY9dvOtWw8FDP/ipsOXEU7xqW0IsjWmALLeB40UavAHJQnrTXrtbXomDxTl+1VnbrcTmPEPf6VqlE1xZeTZ2zmg4Tw2ofe9hWpJxSoR9nORuPPlUKXVJMGQeBq4xeBGtJKMJqno3uXRl/wCNfR7OVrJUqSEpV4YSPZ210rLsX7bnVqUHUYclJSRKQmcj1k616beV22W1pwvNJVz0I6EQR61lby7AvJOKy2iUgCG15EACAApIzEZQR51DJiype12ha2XrlvJTg7t2AsZyNxvlsd+hold1jdQFlSsZWslAOQQjCMKYO+vzNCOzl1myrUu0R3hIQ34pEQJVJ1USSI2A50ftb5wEjXP5NTx49XLs6OTSpdA29FZeIAAGYyEkCJkaxOXU1RTdqX05iE/eMp9I9qprZY1tpWVjvOkqEcAInX8qBfxB1ahKwEJ1BJBka/8AFSmlF9FoW1pjrV2dFnClIeK8SpIVxjKD5UDetgKsKjhIiQeg9aPurW8qIhA9lW5O5ArLWqxuOWhTQQVOZZAagJTB6aZ0VHk7ZubRdF4AnCmdFSfIke+mL8brCUyR3reJWs4lAEehq9Y+yFqEFaUk7gLRw3z/ACq9dlxPoWklqIUDkUmADOxMmm409B5KjM2Z1TeHGk5+vnR65m02ogNgZSZMgCNapXlYnQtRDLihmEwhZnPppWn7G3e6020SgJ7wrKwUqxgYjgTwSn7RnPQUYqzTegtZrkZClnFIxlZQBA8U+EngT00qV+wtmFQZCFAZ5GSSSR1NOt6g0k4Qo4jmYnppXWeyurEHwo1JOvSmVt8a2RfV2ArrtBKsAT4iJw6mBlPStFa2mUpS5aMMpzA30050OtV5sWYKSynEs6qOefM/pQB+0LcONwknntVsOFY1vbEnPl1oJXrfzjvhT9W3wGpH6UGQRtSrPOo2zV3sRaRLSZGmzShVYFnFnnVS1nAkqOgE5Zk9BvVh18A4Rmo6D41BZ7G5jlz02j8NbibkYq325b6ozSgHJP6qpWrJyr0C0dn2XQSBgXxHH8Q3oHarkeaMFJUPvJBI/apZIyR0YpxYFZshG1GLCxnpTW26v2VPpUC5dYQBV1IqFgD5FXUxw/KnsmaSOVIlQmNDU6RTXEA8zVCZ0iolGNaclZ3yoTfFvUhMDWs5JKzKN6CyFRpU7dtI19fnSsGz2kebV4k94jhoodDv51obsv1h7JKoV9xWSv38q2PMn0xcmGUe0aNNuTqfUftUn0sbK9R8KFFAO1cWNwoir82Q4oIurCxBCVek+W9UXbDumRyOdQrQv7wPlUX1o0jyJ+FBtPsKTJCFJ1B61YYtpG9Uy+8Nj/qpptqh7SfUA0q15D2GxaUqEKAUOBE1Xtt0JcSQ2otk+Y9Nqoot4+6B5R+VW2reNAYpqUlUgbj0VBdjyFZuymMwoEZxqCPyqq/dSHhKg25OikkT1nL9a0TVtERr5/tUDiUnROH+nKpP8eP9IyyvyZp+7e5CZchClYcwCoTww6mOlE1pS1klMSACqPEoDTERr+9SP2NRWFYiQARhmBmRmeJy/OnB3YyOuVQnFrXRXkmBbXeiEDNaQdsRgGM1f9oNR/xFTikLbdhqCSmM1yBhzOg/PKuvGzpS5nCQR4ZE9Ry+Bquz41FEQoZnkOM8OfMVx3NLR0JR7CrVtInxZU9FsUYCZJOgFMRcxUBCin8Wvu3qV22s2VOFAxL34nqRoOQq2LBln26RKc4LrbL6IaTjeXB+6D7jxNZ2+O0K3PCjwo95qhbLQ46cSp5DQDpVRSDwruilBVEh27Y1AJNPcQrjUrKcqRZo0DkVVBXGlSDGtOeOVRrcAEkxRoPIUqUOdDhewW53KDCtMR0ngOJq6xZ1vH7rfDdXwHKiDtxMrThw4ToFDY7TxFGmGLjfuJLrusIzmSdSc5NGmmQclD54is7ct4llwsPq0MJUeOw5g7VpE2vEPA2pUb7U8GqNlwyi/r5FNkKcwZHvFTsoOtSWdhSs1KgfdHx3pbWe68QSS39opzKeZG6eYp7JcbdIR6xMrH1iE9dCPPagl43YhObOIjcHOOY5da09keQtOJJChyM+RG1TWVITkBlt8DSyxxmhozcNOzDso5mpwg8a0VuuIKOJuEcRseYjSsza3nm1FBszhjcFuDzHj0rlljlHs6IzUjWhVLlQ0XgToy6Y/CB+ZpRb3P5C/NTY/wB9ZSRuLL6zlWbvtIJzPvoqq0PH/BjqtP6TQO8FOKVmhA/zk/7almftKYlsDOtCqj9kB3E/POiK0K4J9T/4036Ofwj1ri2jrTDPYxx9RWlThW2hIjFmQSchOsQDWpCwMiYod2PsuFgqMStZzGXhSABrzxUTebnXMcK9bDF+mrPLztc3QpSK6BVVLZSDB02NDrm7RIfxeBSSmJnNOcxBHTlTvToWMJSTklpBhSajUipAqdKQg1qAVlMDpURYqyqmzS0ayBMjepkPq404pmkDVYxO3aTuKlU6k6iqyRXLTTWxaOtDTCgMQ0MjMiD5Gqrtts7ZkJlXSTlprUdpTQp9InSl18IbfyS22+nXMk+BPHc0PQiOvGpDrXRRN0NpDTqaaABhqJVSLNU3FrUcLaZO6vsp68TyrGG2hYBAmSdE7mh6GnFOfWAgj7PD49a0F23SEHESVLOqj85UTtN3B1OEkg7KGo5dKZRs1gpNrSiN+QqRt1xegwJO+/l8in2axd0YKZ4n9Zoi3ZwelNTYeUV0jN3/AHMSjvEklSdeaf2o92SvHvEQr20wFDc8FUUbs439azN9MGxrD6DCCcx78J4gx5RStOD5I6cc1nh6cu/D/wCjbJTVS8r8aYTK1Adawl8f2hynDZ2ziP216DoBqawttfefVjdWpauJ26DamllS6IRwSfZ6DYe1LaLX4UYW3CAeGZ9oeZ8pNeitWpMTNfO6caRGccP1rQjtNasARiAyAKh7R86lDMo3Z05sXqU130esXnfIR4UeJXDh1oKHVKzUoyeGg5Vj7pvRWhzJ51p2nsqWeVy6EjiUDVBQpFRUUUhNAFCurHGgluA4iiy086FWtPWoZdorjBTxTx99QG0Dl+dWHUE7n1qqts6Yo865GjpR6LdbOBhsfgB81Zn3mpsEknypVCMthAHllTk/rXuxSSo8du3ZQvOzrLaggSsghI5nLfYTPlQy4blTZ0qClBSlETHsiBoNz7qg7cWq0NwplZAAlQTqOZG4qr2W7QJtBwLhLnDZXNPwqNpzOxY8iwXFpp913/c0ybKNUyPM0xwkURaTlFI43NVcDj5GeF4JJInMaip0rBpl9XEl0SCUOD2Vp1HIj7Q5H3VnBaLTZzDyMafvon3pOY8pqLtdjqn0apJqVJoTYLzQ4JSoGiKF0UwE5SDTViuSqkcVRMUbTQxwURtCqHrpfISupNJFSqFMNEAwionSACTkBvSWm0pQM9ToBqegqs1YXHSFOeFOoQP14msYGWi8FOKwtpVh3XET04CjV3AAAaUSasiQIAilVZhwoqLM5D2av2dNUmUxV9iqRFZYVZcQ57Vj727a2ezrU3hWtaThUgCIPU5f81sbQ9hTlqcvifnjWW7Udk0r/wDc4RjjxjiBorqBryHKhNtLQ8IJ7kZe3dvbS5kwgNpj7QxKnjwFZ5xD7hlxS1n8RJ9BoK11lu9OyRV5FjHCuOWSTOyMIRMW3YVfdohYru4itQbAKciwip7KWgS3c6TtUybjRuKNJZilDdDigcgU1diU7RRVCMqfgpY5UUqA5B6DSwaSuq5AjcSaH2to11dUpjxYNes53PuFQN2XxJmYxDbnSV1cnk6E9HpK2JJPOqNstQbkDMn3UtdXtvSPJQCfUTM5550Kf7L/AOKwIVMlAyk8U8Dy+T1dUuCn2dGPPPE7iFrk7QKT9XaJyyxRBEbK+NahCwRIMg6EZg86Supfx8jlafg6fz8EIqOSKqxFJqparIlQIImurq6WrPNMhfPZchXeMKKVa5GD67+dU7JfL7RwvJxRvEK9NDXV1QlGnorF32aKw3m24PCrPhoR1FWlqypa6sAHvqqoo11dQMMUaD26+m0qwJMq3IEhPWN+VJXVjF657MhX1k41H7R/Ll0o0huurqpFCskwU9Ka6upgDgxU7TVdXUaMKpoKdQCNM/nzAoq4iU11dRj5Gk9L+DFW2wd2sp21T0pqUfMV1dXBkilJpHVB3FNkkcq4J+Yrq6pjjo+fk0iR8/Jrq6gEcRSQfk/tXV1YB//Z",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "27",
+      "name": "Crispy Chicken Strips",
+      "category": "Chicken",
+      "price": 2.28,
+      "available": true,
+      "taxRate": 5,
+      "description": "Crispy fried chicken strips served with dip.",
+      "img": "https://plus.unsplash.com/premium_photo-1683657860186-6afce5df3c0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fENyaXNweSUyMENoaWNrZW4lMjBTdHJpcHN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "10% OFF"
+    },
+    {
+      "id": "28",
+      "name": "Iced Lemon Tea",
+      "category": "Drinks",
+      "price": 1.08,
+      "available": true,
+      "taxRate": 12,
+      "description": "Refreshing iced tea with lemon twist.",
+      "img": "https://images.unsplash.com/photo-1656936632107-0bfa69ea06de?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEljZWQlMjBMZW1vbiUyMFRlYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "15% OFF"
+    },
+    {
+      "id": "29",
+      "name": "Spaghetti Bolognese",
+      "category": "Pasta",
+      "price": 2.64,
+      "available": true,
+      "taxRate": 5,
+      "description": "Classic Italian spaghetti with meat sauce.",
+      "img": "https://images.unsplash.com/photo-1622973536968-3ead9e780960?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3BhZ2hldHRpJTIwQm9sb2duZXNlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "30",
+      "name": "Peri Peri Chicken Burger",
+      "category": "Chicken",
+      "price": 2.4,
+      "available": true,
+      "taxRate": 5,
+      "description": "Spicy peri peri chicken burger with lettuce & mayo.",
+      "img": "https://images.unsplash.com/photo-1643757412923-619484c906f2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fFBlcmklMjBQZXJpJTIwQ2hpY2tlbiUyMEJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900",
+      "tag": "20% OFF"
+    },
+    {
+      "id": "1760414224222",
+      "name": "Milkshake",
+      "category": "Drinks",
+      "price": "1.08",
+      "taxRate": "5",
+      "tag": "stock",
+      "description": "A flavoring like fruit or chocolate syrup",
+      "img": "https://images.unsplash.com/photo-1678712803863-6cd22f6b9dba?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG1pbGtzaGFrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=900"
+    }
+  ],
+  "orders": [
+    {
+      "id": "101",
+      "employeeId": 1,
+      "customerName": "Ravi Kumar",
+      "tableNumber": 3,
+      "status": "Completed",
+      "date": "2025-10-09",
+      "items": [
+        {
+          "menuId": 2,
+          "name": "Cheese Burst Burger",
+          "quantity": 2,
+          "price": 1.92
+        },
+        {
+          "menuId": 11,
+          "name": "Coke 500ml",
+          "quantity": 2,
+          "price": 0.72
+        }
+      ],
+      "subtotal": 6.24,
+      "tax": 0.31,
+      "discount": 0,
+      "total": 6.55,
+      "paymentMethod": "UPI"
+    },
+    {
+      "id": "102",
+      "employeeId": 2,
+      "customerName": "Anjali Gupta",
+      "tableNumber": 1,
+      "status": "Completed",
+      "date": "2025-10-09",
+      "items": [
+        {
+          "menuId": 3,
+          "name": "Chicken Crunch Burger",
+          "quantity": 1,
+          "price": 2.28
+        },
+        {
+          "menuId": 13,
+          "name": "Oreo Shake",
+          "quantity": 1,
+          "price": 1.56
+        }
+      ],
+      "subtotal": 3.84,
+      "tax": 0.19,
+      "discount": 0.2,
+      "total": 3.83,
+      "paymentMethod": "Cash"
+    },
+    {
+      "id": "103",
+      "employeeId": 3,
+      "customerName": "Snehal Deshmukh",
+      "tableNumber": 2,
+      "status": "Pending",
+      "date": "2025-10-10",
+      "items": [
+        {
+          "menuId": 1,
+          "name": "Classic Veg Burger",
+          "quantity": 1,
+          "price": 1.44
+        },
+        {
+          "menuId": 14,
+          "name": "Mojito",
+          "quantity": 1,
+          "price": 1.2
+        }
+      ],
+      "subtotal": 2.64,
+      "tax": 0.13,
+      "discount": 0,
+      "total": 2.77,
+      "paymentMethod": "Card"
+    }
+  ],
+  "customers": [
+    {
+      "id": "CUST-001",
+      "orderId": "ORD-101",
+      "name": "Ravi Kumar",
+      "orders": 5,
+      "phone": "9876543210",
+      "address": "123 MG Road, Pune"
+    },
+    {
+      "id": "CUST-002",
+      "orderId": "ORD-102",
+      "name": "Priya Sharma",
+      "orders": 3,
+      "phone": "9988776655",
+      "address": "A-45 Andheri East, Mumbai"
+    },
+    {
+      "id": "CUST-003",
+      "orderId": "ORD-103",
+      "name": "Amit Patel",
+      "orders": 7,
+      "phone": "9123456789",
+      "address": "Near Gota Circle, Ahmedabad"
+    }
+  ],
+  "reports": {
     "totalEmployees": 4,
-    "totalOrders": 3,
+    "totalOrders": 156,
     "totalRevenue": 1072,
     "topSellingDishes": [
-      { "name": "Cheese Burst Burger", "orders": 5 },
-      { "name": "French Fries", "orders": 4 },
-      { "name": "Oreo Shake", "orders": 3 }
+      {
+        "name": "Cheese Burst Burger",
+        "orders": 5
+      },
+      {
+        "name": "French Fries",
+        "orders": 4
+      },
+      {
+        "name": "Oreo Shake",
+        "orders": 3
+      }
     ],
     "salesTrends": [
-      { "date": "2025-10-07", "total": 380 },
-      { "date": "2025-10-08", "total": 450 },
-      { "date": "2025-10-09", "total": 546 }
+      {
+        "date": "2025-10-07",
+        "total": 380
+      },
+      {
+        "date": "2025-10-08",
+        "total": 450
+      },
+      {
+        "date": "2025-10-09",
+        "total": 546
+      }
     ]
-  }
-
-  }
-  
-
-  
-
-
-
+  },
+  "employeePerformance": [
+    {
+      "id": "E1",
+      "name": "Alice",
+      "totalOrders": 1,
+      "totalSales": 10.1
+    },
+    {
+      "id": "E2",
+      "name": "Bob",
+      "totalOrders": 1,
+      "totalSales": 15.3
+    }
+  ]
+}

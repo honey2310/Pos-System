@@ -51,13 +51,17 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+// ✅ Load persisted user from localStorage
+const persistedUser = JSON.parse(localStorage.getItem("currentUser"));
+const persistedRole = localStorage.getItem("role");
+
 const loginSlice = createSlice({
   name: "login",
   initialState: {
     managerData: [],
     employeeData: [],
-    currentUser: null,
-    role: null,
+    currentUser: persistedUser || null,
+    role: persistedRole || null,
     loading: false,
     error: null,
   },
@@ -65,11 +69,13 @@ const loginSlice = createSlice({
     logoutUser: (state) => {
       state.currentUser = null;
       state.role = null;
+      localStorage.removeItem("currentUser");
+      localStorage.removeItem("role");
     },
   },
   extraReducers: (builder) => {
     builder
-      // 🔹 Fetch user data
+      // Fetch user data
       .addCase(fetchUserData.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -84,7 +90,7 @@ const loginSlice = createSlice({
         state.error = action.payload;
       })
 
-      // 🔹 Login user
+      // Login user
       .addCase(loginUser.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -93,6 +99,10 @@ const loginSlice = createSlice({
         state.loading = false;
         state.currentUser = action.payload.user;
         state.role = action.payload.role;
+
+        // ✅ Persist user info in localStorage
+        localStorage.setItem("currentUser", JSON.stringify(action.payload.user));
+        localStorage.setItem("role", action.payload.role);
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
