@@ -7,7 +7,7 @@ import {
   updateCustomer,
 } from "../../Slices/Md/CustomerSlice";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaEdit, FaTimes } from "react-icons/fa";
 import ManagerNavbar from "../Managerdash/ManagerNavbar";
 
 export default function CustomerPage() {
@@ -49,78 +49,80 @@ export default function CustomerPage() {
     setShowEdit(true);
   };
   const confirmEdit = () => {
-    dispatch(
-      updateCustomer({
-        ...selectedCustomer,
-        ...formData,
-      })
-    );
+    dispatch(updateCustomer({ ...selectedCustomer, ...formData }));
     setShowEdit(false);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-[#f7f0fd] via-[#dfc9b8] to-[#ae8c70] text-[#04040b] flex flex-col">
       <ManagerNavbar />
-      <div className="p-6 pt-40">
-        <h1 className="text-3xl font-bold text-red-400 mb-6">
+
+      <div className="p-6 pt-36 max-w-7xl mx-auto w-full mt-20">
+        <h1 className="text-3xl font-bold text-center mb-10">
           👥 Customer Details
         </h1>
 
-        {status === "loading" && <p>Loading...</p>}
-        {status === "failed" && <p>Error loading customers</p>}
+        {status === "loading" && (
+          <p className="text-center text-lg">Loading customers...</p>
+        )}
+        {status === "failed" && (
+          <p className="text-center text-lg text-red-500">
+            Error loading customers.
+          </p>
+        )}
 
-        <div className="overflow-x-auto bg-gray-900/60 border border-gray-800 rounded-3xl shadow-lg">
-          <table className="min-w-full text-sm">
-            <thead>
-              <tr className="bg-gray-800 text-red-400 text-left">
-                <th className="p-4">Order ID</th>
-                <th className="p-4">Name</th>
-                <th className="p-4">Orders</th>
-                <th className="p-4">Phone</th>
-                <th className="p-4">Address</th>
-                <th className="p-4 text-center">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {customers.map((cust, i) => (
-                <motion.tr
-                  key={cust.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="border-b border-gray-800 hover:bg-gray-800/60"
+        {/* Cards Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {customers.map((cust, i) => (
+            <motion.div
+              key={cust.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05 }}
+              className="rounded-2xl bg-white/60 backdrop-blur-md shadow-lg border border-[#ae8c70]/30 hover:shadow-xl p-6 flex flex-col justify-between"
+            >
+              <div>
+                <h2 className="text-xl font-semibold mb-2">{cust.name}</h2>
+                <p className="text-sm mb-1">
+                  <span className="font-semibold">Order ID:</span>{" "}
+                  {cust.orderId}
+                </p>
+                <p className="text-sm mb-1">
+                  <span className="font-semibold">Orders:</span> {cust.orders}
+                </p>
+                <p className="text-sm mb-1">
+                  <span className="font-semibold">Phone:</span> {cust.phone}
+                </p>
+                <p className="text-sm mb-3">
+                  <span className="font-semibold">Address:</span>{" "}
+                  {cust.address}
+                </p>
+              </div>
+
+              <div className="flex justify-end gap-3 mt-4">
+                <button
+                  onClick={() => handleEdit(cust)}
+                  className="text-[#4a3f35] bg-[#dfc9b8] hover:bg-[#cdb29f] px-4 py-2 rounded-xl font-medium transition-all"
                 >
-                  <td className="p-4">{cust.orderId}</td>
-                  <td className="p-4 font-semibold">{cust.name}</td>
-                  <td className="p-4">{cust.orders}</td>
-                  <td className="p-4">{cust.phone}</td>
-                  <td className="p-4">{cust.address}</td>
-                  <td className="p-4 flex justify-center gap-3">
-                    <button
-                      onClick={() => handleEdit(cust)}
-                      className="text-blue-400 hover:text-blue-500 text-xl"
-                    >
-                      <FaEdit />
-                    </button>
-                    <button
-                      onClick={() => handleDelete(cust)}
-                      className="text-red-400 hover:text-red-500 text-xl"
-                    >
-                      <FaTrash />
-                    </button>
-                  </td>
-                </motion.tr>
-              ))}
-            </tbody>
-          </table>
+                  <FaEdit className="inline mr-1" /> Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(cust)}
+                  className="text-[#f7f0fd] bg-[#ae8c70] hover:bg-[#946e55] px-4 py-2 rounded-xl font-medium transition-all"
+                >
+                  <FaTimes className="inline mr-1" /> Delete
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {/* 🗑️ Delete Confirmation Popup */}
+      {/* 🗑️ Delete Popup */}
       <AnimatePresence>
         {showDelete && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -129,28 +131,23 @@ export default function CustomerPage() {
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
-              className="bg-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-700 text-center max-w-md w-full"
+              className="bg-white/90 rounded-2xl p-8 shadow-2xl border border-[#ae8c70]/30 text-center max-w-md w-full"
             >
-              <h2 className="text-2xl font-bold text-red-400 mb-3">
-                Delete Customer
-              </h2>
-              <p className="text-gray-300 mb-6">
+              <h2 className="text-2xl font-bold mb-3">Delete Customer</h2>
+              <p className="mb-6">
                 Are you sure you want to delete{" "}
-                <span className="font-semibold text-white">
-                  {selectedCustomer?.name}
-                </span>
-                ?
+                <span className="font-semibold">{selectedCustomer?.name}</span>?
               </p>
               <div className="flex justify-center gap-4">
                 <button
                   onClick={confirmDelete}
-                  className="bg-red-500 hover:bg-red-600 px-5 py-2 rounded-lg font-semibold"
+                  className="bg-[#ae8c70] hover:bg-[#946e55] text-white px-5 py-2 rounded-lg font-semibold"
                 >
                   Delete
                 </button>
                 <button
                   onClick={() => setShowDelete(false)}
-                  className="bg-gray-600 hover:bg-gray-700 px-5 py-2 rounded-lg font-semibold"
+                  className="bg-gray-300 hover:bg-gray-400 px-5 py-2 rounded-lg font-semibold"
                 >
                   Cancel
                 </button>
@@ -164,7 +161,7 @@ export default function CustomerPage() {
       <AnimatePresence>
         {showEdit && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -173,28 +170,26 @@ export default function CustomerPage() {
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
-              className="bg-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-700 text-center max-w-lg w-full"
+              className="bg-white/90 rounded-2xl p-8 shadow-2xl border border-[#ae8c70]/30 max-w-lg w-full"
             >
-              <h2 className="text-2xl font-bold text-yellow-400 mb-5">
+              <h2 className="text-2xl font-bold mb-4 text-center">
                 Edit Customer
               </h2>
 
-              <div className="space-y-4 text-left">
+              <div className="space-y-4">
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">
-                    Name
-                  </label>
+                  <label className="block text-sm font-medium mb-1">Name</label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-yellow-400"
+                    className="w-full px-4 py-2 rounded-lg bg-[#f7f0fd] border border-[#dfc9b8] focus:outline-none focus:ring-2 focus:ring-[#ae8c70]"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">
+                  <label className="block text-sm font-medium mb-1">
                     Phone
                   </label>
                   <input
@@ -203,11 +198,11 @@ export default function CustomerPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-yellow-400"
+                    className="w-full px-4 py-2 rounded-lg bg-[#f7f0fd] border border-[#dfc9b8] focus:outline-none focus:ring-2 focus:ring-[#ae8c70]"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-gray-400 mb-1">
+                  <label className="block text-sm font-medium mb-1">
                     Address
                   </label>
                   <textarea
@@ -216,7 +211,7 @@ export default function CustomerPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, address: e.target.value })
                     }
-                    className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-yellow-400"
+                    className="w-full px-4 py-2 rounded-lg bg-[#f7f0fd] border border-[#dfc9b8] focus:outline-none focus:ring-2 focus:ring-[#ae8c70]"
                   />
                 </div>
               </div>
@@ -224,13 +219,13 @@ export default function CustomerPage() {
               <div className="flex justify-center gap-4 mt-6">
                 <button
                   onClick={confirmEdit}
-                  className="bg-yellow-500 hover:bg-yellow-600 px-6 py-2 rounded-lg font-semibold text-black"
+                  className="bg-[#dfc9b8] hover:bg-[#cdb29f] px-6 py-2 rounded-lg font-semibold text-[#04040b]"
                 >
                   Save
                 </button>
                 <button
                   onClick={() => setShowEdit(false)}
-                  className="bg-gray-600 hover:bg-gray-700 px-6 py-2 rounded-lg font-semibold text-white"
+                  className="bg-gray-300 hover:bg-gray-400 px-6 py-2 rounded-lg font-semibold text-[#04040b]"
                 >
                   Cancel
                 </button>

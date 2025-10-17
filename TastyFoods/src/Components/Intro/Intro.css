@@ -1,4 +1,4 @@
-@keyframes fadeInOut {
+ @keyframes fadeInOut {
   0% {
     opacity: 0;
     transform: scale(0.9);
@@ -19,4 +19,5 @@
 
 .animate-fadeInOut {
   animation: fadeInOut 3s ease-in-out forwards;
-}
+} 
+

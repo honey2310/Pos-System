@@ -3,7 +3,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts, deleteProduct } from "../../Slices/Md/Products";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPlus, FaEdit, FaTrash, FaSearch, FaArrowUp, FaArrowDown, FaUndo } from "react-icons/fa";
+import {
+  FaPlus,
+  FaEdit,
+  FaTrash,
+  FaSearch,
+  FaArrowUp,
+  FaArrowDown,
+  FaUndo,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import ManagerNavbar from "../Managerdash/ManagerNavbar";
 
@@ -23,25 +31,20 @@ export default function ProductsPage() {
   }, [dispatch]);
 
   useEffect(() => {
-    let tempProducts = [...products];
+    let temp = [...products];
 
-    // Filter by search term
     if (searchTerm) {
-      tempProducts = tempProducts.filter(
+      temp = temp.filter(
         (p) =>
           p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           p.category.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Sort by price
-    if (sortOrder === "asc") {
-      tempProducts.sort((a, b) => a.price - b.price);
-    } else if (sortOrder === "desc") {
-      tempProducts.sort((a, b) => b.price - a.price);
-    }
+    if (sortOrder === "asc") temp.sort((a, b) => a.price - b.price);
+    else if (sortOrder === "desc") temp.sort((a, b) => b.price - a.price);
 
-    setFilteredProducts(tempProducts);
+    setFilteredProducts(temp);
   }, [products, searchTerm, sortOrder]);
 
   const handleDelete = (id) => {
@@ -63,28 +66,27 @@ export default function ProductsPage() {
   const handleAdd = () => navigate("/add-product");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-[#f7f0fd] via-[#dfc9b8] to-[#ae8c70] text-[#04040b] flex flex-col">
       <ManagerNavbar />
 
       <div className="p-6 pt-40">
         {/* Title + Search/Sort */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
-          <h1 className="text-3xl font-bold text-red-400 flex items-center gap-2">
+          <h1 className="text-3xl font-bold text-[#04040b] flex items-center gap-2">
             🍔 Product Management
           </h1>
 
-          {/* Search + Sort Controls */}
           <div className="flex items-center gap-3">
-            {/* Search Bar */}
+            {/* Search */}
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search menu..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="bg-gray-900/60 border border-gray-700 rounded-full px-10 py-2 text-sm placeholder-gray-400 text-white focus:outline-none focus:border-red-500"
+                className="bg-white/70 border border-[#ae8c70] rounded-full px-10 py-2 text-sm text-[#04040b] placeholder-[#6b6b6b] focus:outline-none focus:ring-2 focus:ring-[#ae8c70]"
               />
-              <FaSearch className="absolute left-3 top-2.5 text-gray-500" />
+              <FaSearch className="absolute left-3 top-2.5 text-[#ae8c70]" />
             </div>
 
             {/* Sort Buttons */}
@@ -94,84 +96,87 @@ export default function ProductsPage() {
                 title="High to Low"
                 className={`p-2 rounded-full border transition ${
                   sortOrder === "desc"
-                    ? "bg-red-500 border-red-500 text-white"
-                    : "bg-gray-800/60 border-gray-700 hover:bg-red-500/70"
+                    ? "bg-[#ae8c70]/40 border-[#ae8c70]"
+                    : "bg-white/60 border-[#dfc9b8] hover:bg-[#dfc9b8]/60"
                 }`}
               >
-                <FaArrowUp />
+                <FaArrowUp className="text-[#04040b]" />
               </button>
               <button
                 onClick={() => setSortOrder("asc")}
                 title="Low to High"
                 className={`p-2 rounded-full border transition ${
                   sortOrder === "asc"
-                    ? "bg-red-500 border-red-500 text-white"
-                    : "bg-gray-800/60 border-gray-700 hover:bg-red-500/70"
+                    ? "bg-[#ae8c70]/40 border-[#ae8c70]"
+                    : "bg-white/60 border-[#dfc9b8] hover:bg-[#dfc9b8]/60"
                 }`}
               >
-                <FaArrowDown />
+                <FaArrowDown className="text-[#04040b]" />
               </button>
               <button
                 onClick={() => setSortOrder(null)}
                 title="Reset Sorting"
                 className={`p-2 rounded-full border transition ${
                   sortOrder === null
-                    ? "bg-green-500 border-green-500 text-white"
-                    : "bg-gray-800/60 border-gray-700 hover:bg-green-500/70"
+                    ? "bg-[#dfc9b8]/60 border-[#ae8c70]"
+                    : "bg-white/60 border-[#dfc9b8] hover:bg-[#dfc9b8]/70"
                 }`}
               >
-                <FaUndo />
+                <FaUndo className="text-[#04040b]" />
               </button>
             </div>
           </div>
         </div>
 
-        {status === "loading" && <p>Loading...</p>}
-        {status === "failed" && <p>Error loading products</p>}
+        {/* Loading/Error */}
+        {status === "loading" && <p>Loading products...</p>}
+        {status === "failed" && <p>Failed to load products.</p>}
 
+        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {/* Add Product */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             onClick={handleAdd}
-            className="cursor-pointer flex flex-col items-center justify-center bg-gradient-to-br bg-gray-900 rounded-2xl p-8 border border-gray-800 shadow-lg h-95"
+            className="cursor-pointer flex flex-col items-center justify-center bg-white/70 rounded-2xl p-8 border border-[#ae8c70]/50 shadow-md"
           >
-            <FaPlus className="text-5xl mb-3" />
-            <p className="font-semibold text-white text-lg">Add Product</p>
+            <FaPlus className="text-5xl text-[#ae8c70] mb-3" />
+            <p className="font-semibold text-lg">Add Product</p>
           </motion.div>
 
+          {/* Product Cards */}
           {filteredProducts.map((product) => (
             <motion.div
               key={product.id}
-              whileHover={{ scale: 1.02 }}
-              className="bg-gray-900 border border-gray-800 rounded-2xl p-5 shadow-lg h-96 flex flex-col justify-between"
+              whileHover={{ scale: 1.03 }}
+              className="bg-white/80 border border-[#dfc9b8] rounded-2xl p-5 shadow-md flex flex-col justify-between"
             >
               <img
                 src={product.img}
                 alt={product.name}
-                className="rounded-xl w-full h-44 object-cover mb-4"
+                className="rounded-xl w-full h-44 object-cover mb-4 border border-[#dfc9b8]/60"
               />
               <div>
                 <h3 className="font-semibold text-xl">{product.name}</h3>
-                <p className="text-gray-400 text-sm">{product.category}</p>
-                <p className="text-gray-400 text-sm">{product.description}</p>
-                <p className="text-yellow-400 font-bold mt-1">
+                <p className="text-sm text-[#6b6b6b]">{product.category}</p>
+                <p className="text-sm text-[#6b6b6b]">{product.description}</p>
+                <p className="text-[#ae8c70] font-bold mt-1">
                   ₹{product.price}
                 </p>
-                <span className="text-green-400 text-xs">{product.tag}</span>
+                <span className="text-xs text-[#04040b]/70">{product.tag}</span>
               </div>
 
               <div className="flex justify-end gap-3 mt-4">
                 <button
                   onClick={() => handleEdit(product)}
-                  className="text-blue-400 hover:text-blue-500 text-xl"
+                  className="text-[#ae8c70] hover:text-[#8e735c] text-lg transition"
                 >
                   <FaEdit />
                 </button>
 
                 <button
                   onClick={() => handleDelete(product.id)}
-                  className="text-red-400 hover:text-red-500 text-xl"
+                  className="text-[#8e735c] hover:text-[#6b5748] text-lg transition"
                 >
                   <FaTrash />
                 </button>
@@ -185,34 +190,34 @@ export default function ProductsPage() {
       <AnimatePresence>
         {showConfirm && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/40 flex items-center justify-center z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              initial={{ scale: 0.8 }}
+              initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              className="bg-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-700 text-center max-w-md w-full"
+              exit={{ scale: 0.9 }}
+              className="bg-white rounded-2xl p-8 shadow-xl border border-[#dfc9b8] text-center max-w-md w-full"
             >
-              <h2 className="text-2xl font-bold text-red-400 mb-3">
+              <h2 className="text-2xl font-bold text-[#ae8c70] mb-3">
                 Delete Product
               </h2>
-              <p className="text-gray-300 mb-6">
+              <p className="text-[#04040b]/80 mb-6">
                 Are you sure you want to delete this product? This action cannot
                 be undone.
               </p>
               <div className="flex justify-center gap-4">
                 <button
                   onClick={confirmDelete}
-                  className="bg-red-500 hover:bg-red-600 px-5 py-2 rounded-lg font-semibold"
+                  className="bg-[#ae8c70]/80 hover:bg-[#ae8c70] px-5 py-2 rounded-lg text-white font-semibold"
                 >
                   Delete
                 </button>
                 <button
                   onClick={() => setShowConfirm(false)}
-                  className="bg-gray-600 hover:bg-gray-700 px-5 py-2 rounded-lg font-semibold"
+                  className="bg-[#dfc9b8]/80 hover:bg-[#dfc9b8] px-5 py-2 rounded-lg text-[#04040b] font-semibold"
                 >
                   Cancel
                 </button>
